@@ -25,7 +25,6 @@ class _DrawerItemsListViewState extends State<DrawerItemsListView> {
         title: 'My Investments', image: R.assetsImagesMyInvestmentsSvg),
   ];
 
-
   @override
   Widget build(BuildContext context) {
     return SliverList.builder(
@@ -43,7 +42,7 @@ class _DrawerItemsListViewState extends State<DrawerItemsListView> {
             padding: const EdgeInsets.only(top: 20),
             child: DrawerItem(
               drawerItemModel: items[index],
-              isActive: activeIndex == index ,
+              isActive: activeIndex == index,
             ),
           ),
         );

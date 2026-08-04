@@ -30,8 +30,8 @@ class $AssetsImagesGen {
   final SvgGenImage avatar1 = const SvgGenImage('assets/images/avatar1.svg');
   final SvgGenImage avatar2 = const SvgGenImage('assets/images/avatar2.svg');
   final SvgGenImage avatar3 = const SvgGenImage('assets/images/avatar3.svg');
-  final SvgGenImage cardBackground =
-      const SvgGenImage('assets/images/card_background.svg');
+  final AssetGenImage cardBackground =
+      const AssetGenImage('assets/images/card_background.png');
   final SvgGenImage gallery = const SvgGenImage('assets/images/gallery.svg');
   final SvgGenImage logout = const SvgGenImage('assets/images/logout.svg');
 }

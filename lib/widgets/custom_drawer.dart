@@ -12,7 +12,7 @@ class CustomDrawer extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      color: const Color.fromARGB(255, 255, 255, 1),
+      color: Colors.white,
       child: CustomScrollView(
         slivers: [
           const SliverToBoxAdapter(

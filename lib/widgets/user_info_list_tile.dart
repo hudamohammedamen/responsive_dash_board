@@ -9,7 +9,7 @@ class UserInfoListTile extends StatelessWidget {
 final UserInfoModel userInfoModel;
   @override
   Widget build(BuildContext context) {
-    return  Card(
+    return Card(
       elevation: 0,
       color: const Color(0xFFFAFAFA),
       child: ListTile(

@@ -43,9 +43,9 @@ class R {
   static const String assetsImagesAvatar2Svg = 'assets/images/avatar2.svg';
   static const String assetsImagesAvatar3Svg = 'assets/images/avatar3.svg';
 
-  /// ![preview](file://C:\Users\DW\OneDrive - Nahda University\Desktop\project1\responsive_dash_board\assets\images\card_background.svg)
+  /// ![preview](file://C:\Users\DW\OneDrive - Nahda University\Desktop\project1\responsive_dash_board\assets\images\card_background.png)
   static const String assetsImagesCardBackgroundSvg =
-      'assets/images/card_background.svg';
+      'assets/images/card_background.png';
 
   /// ![preview](file://C:\Users\DW\OneDrive - Nahda University\Desktop\project1\responsive_dash_board\assets\images\gallery.svg)
   static const String assetsImagesGallerySvg = 'assets/images/gallery.svg';
