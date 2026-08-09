@@ -21,7 +21,7 @@ class RangeOptions extends StatelessWidget {
               borderRadius: BorderRadius.circular(12))),
       child: Text(
         'Monthly',
-        style: AppStyles.styleMedium16,
+        style: AppStyles.styleMedium16(context),
       ),
     );
   }

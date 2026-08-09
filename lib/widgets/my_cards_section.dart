@@ -13,16 +13,17 @@ class MyCardsSection extends StatefulWidget {
 class _MyCardsSectionState extends State<MyCardsSection> {
   late PageController pageController;
   int currentPageIndex = 0;
+
   @override
   void initState() {
-    pageController = PageController();
-    pageController.addListener(
-      () {
-        currentPageIndex = pageController.page!.round();
-      },
-    );
-    // TODO: implement initState
     super.initState();
+    pageController = PageController();
+  }
+
+  @override
+  void dispose() {
+    pageController.dispose();
+    super.dispose();
   }
 
   @override
@@ -31,20 +32,37 @@ class _MyCardsSectionState extends State<MyCardsSection> {
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         SizedBox(
-            width: 420,
-            child: Text(
-              'My Card',
-              style: AppStyles.styleSemiBold20,
-            )),
-        const SizedBox(
-          height: 20,
+          width: 420,
+          child: Text(
+            'My Card',
+            style: AppStyles.styleSemiBold20(context),
+          ),
         ),
-         MyCardsPageView(pageController: pageController,),
-        const SizedBox(
-          height: 20,
+        const SizedBox(height: 20),
+        MyCardsPageView(
+          pageController: pageController,
+          onPageChanged: (index) {
+            setState(() {
+              currentPageIndex = index;
+            });
+          },
         ),
-         DotsIndicator(currentPageIndex: currentPageIndex,)
+        const SizedBox(height: 20),
+        DotsIndicator(
+          currentPageIndex: currentPageIndex,
+          onDotTap: (index) {
+            setState(() {
+              currentPageIndex = index;
+            });
+            pageController.animateToPage(
+              index,
+              duration: const Duration(milliseconds: 300),
+              curve: Curves.easeInOut,
+            );
+          },
+        ),
       ],
     );
   }
 }
+

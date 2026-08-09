@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:responsive_dash_board/models/item_details_model.dart';
-import 'package:responsive_dash_board/utils/app_styles.dart';
 
 import 'item_details.dart';
 
@@ -17,12 +16,8 @@ class IncomeDetails extends StatelessWidget {
   ];
   @override
   Widget build(BuildContext context) {
-    return ListView.builder(
-      itemCount: items.length,
-      shrinkWrap: true,
-      itemBuilder: (context, index) {
-        return ItemDetails(itemDetailsModel: items[index]);
-      },
+    return Column(
+      children: items.map((e) => ItemDetails(itemDetailsModel: e)).toList(),
     );
   }
 }

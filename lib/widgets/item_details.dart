@@ -24,13 +24,13 @@ class ItemDetails extends StatelessWidget {
       ),
       title: Text(
         itemDetailsModel.title,
-        style: AppStyles.styleRegular16,
+        style: AppStyles.styleRegular16(context),
         maxLines: 1,
         overflow: TextOverflow.ellipsis,
       ),
       trailing: Text(
         itemDetailsModel.value,
-        style: AppStyles.styleMedium16.copyWith(
+        style: AppStyles.styleMedium16(context).copyWith(
           color: const Color(0xFF4EB7F2),
         ),
       ),
