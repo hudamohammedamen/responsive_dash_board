@@ -38,53 +38,46 @@ class _AllExpensessItemsListViewState extends State<AllExpensessItemsListView> {
   @override
   Widget build(BuildContext context) {
     return Row(
-      children:
-          // items.map((e) => AllExpensessItem(itemModel: e)).toList()
-          items.asMap().entries.map((e) {
-        int index = e.key;
-        var item = e.value;
-        if (index == 1) {
-          return Expanded(
-              child: GestureDetector(
-            onTap: () {
-              updateIndex(index);
-            },
-            child: Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 12),
-              child: AllExpensessItem(
-                itemModel: item,
-                isSelected: selectedIndex == index,
-              ),
-            ),
-          ));
-        } else {
-          return Expanded(
+      children: [
+        Expanded(
             child: GestureDetector(
-              onTap: () {
-                updateIndex(index);
-              },
-              child: AllExpensessItem(
-                itemModel: item,
-                isSelected: selectedIndex == index,
-              ),
-            ),
-          );
-        }
-      }).toList(),
+          onTap: () {
+            updateIndex(0);
+          },
+          child: AllExpensessItem(
+            itemModel: items[0],
+            isSelected: selectedIndex == 0,
+          ),
+        )),
+        const SizedBox(
+          width: 8,
+        ),
+        Expanded(
+            child: GestureDetector(
+          onTap: () {
+            updateIndex(1);
+          },
+          child: AllExpensessItem(
+            itemModel: items[1],
+            isSelected: selectedIndex == 1,
+          ),
+        )),
+        const SizedBox(
+          width: 8,
+        ),
+        Expanded(
+            child: GestureDetector(
+          onTap: () {
+            updateIndex(2);
+          },
+          child: AllExpensessItem(
+            itemModel: items[2],
+            isSelected: selectedIndex == 2,
+          ),
+        )),
+      ],
     );
 
-    return SizedBox(
-      height: 500,
-      child: ListView.builder(
-        itemCount: items.length,
-        itemBuilder: (context, index) {
-          return AllExpensessItem(
-            itemModel: items[index],
-            isSelected: false,
-          );
-        },
-      ),
-    );
   }
 
   void updateIndex(int index) {
